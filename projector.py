@@ -12,6 +12,8 @@ import argparse
 import os
 import pickle
 import imageio
+from os import listdir
+from os.path import isfile, join
 
 import numpy as np
 import PIL.Image
@@ -23,7 +25,7 @@ import dnnlib.tflib as tflib
 
 class Projector:
     def __init__(self):
-        self.num_steps                  = 1000
+        self.num_steps                  = 10
         self.dlatent_avg_samples        = 10000
         self.initial_learning_rate      = 0.1
         self.initial_noise_factor       = 0.05
@@ -210,6 +212,9 @@ def project(network_pkl: str, target_fname: str, outdir: str, save_video: bool, 
         _G, _D, Gs = pickle.load(fp)
 
     # Load target image.
+    # files = [f for f in listdir(target_fname) if isfile(join(target_fname, f))]
+    # for i in range(len(files)):
+    # path = target_fname + files[i]
     target_pil = PIL.Image.open(target_fname)
     w, h = target_pil.size
     s = min(w, h)
@@ -226,7 +231,7 @@ def project(network_pkl: str, target_fname: str, outdir: str, save_video: bool, 
 
     # Setup output directory.
     os.makedirs(outdir, exist_ok=True)
-    target_pil.save(f'{outdir}/target.png')
+    # target_pil.save(f'{outdir}/target.png')
     writer = None
     if save_video:
         writer = imageio.get_writer(f'{outdir}/proj.mp4', mode='I', fps=60, codec='libx264', bitrate='16M')
@@ -241,8 +246,9 @@ def project(network_pkl: str, target_fname: str, outdir: str, save_video: bool, 
             t.set_postfix(dist=f'{dist[0]:.4f}', loss=f'{loss:.2f}')
 
     # Save results.
-    PIL.Image.fromarray(proj.images_uint8[0], 'RGB').save(f'{outdir}/proj.png')
-    np.savez(f'{outdir}/dlatents.npz', dlatents=proj.dlatents)
+    # PIL.Image.fromarray(proj.images_uint8[0], 'RGB').save(f'{outdir}/proj.png')
+    np.savez('out/dlatents.npz', dlatents=proj.dlatents)
+    return proj.dlatents
     if writer is not None:
         writer.close()
 
@@ -276,7 +282,7 @@ def main():
 
     parser.add_argument('--network',     help='Network pickle filename', dest='network_pkl', required=True)
     parser.add_argument('--target',      help='Target image file to project to', dest='target_fname', required=True)
-    parser.add_argument('--save-video',  help='Save an mp4 video of optimization progress (default: true)', type=_str_to_bool, default=True)
+    parser.add_argument('--save-video',  help='Save an mp4 video of optimization progress (default: true)', type=_str_to_bool, default=False)
     parser.add_argument('--seed',        help='Random seed', type=int, default=303)
     parser.add_argument('--outdir',      help='Where to save the output images', required=True, metavar='DIR')
     project(**vars(parser.parse_args()))
