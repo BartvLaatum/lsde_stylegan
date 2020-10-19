@@ -87,8 +87,7 @@ class Network:
 
         # Choose TensorFlow name scope.
         with tf.name_scope(None):
-            with tf.Graph().as_default():
-                scope = tf.get_default_graph().unique_name(name, mark_as_used=True)
+            scope = tf.get_default_graph().unique_name(name, mark_as_used=True)
 
         # Query current TensorFlow device.
         with tfutil.absolute_name_scope(scope), tf.control_dependencies(None):
@@ -150,6 +149,7 @@ class Network:
                     self._input_templates.append(tf.placeholder(tf.float32, name=param.name))
 
             # Call build func.
+            print(tf)
             out_expr = self._build_func(*self._input_templates, **build_kwargs)
 
         # Collect output templates and variables.
