@@ -17,7 +17,7 @@ import hashlib
 import tempfile
 import shutil
 import tensorflow.compat.v1 as tf
-tf.disable_v2_behavior()
+# tf.disable_v2_behavior()
 
 from tensorflow.python.client import device_lib # pylint: disable=no-name-in-module
 
