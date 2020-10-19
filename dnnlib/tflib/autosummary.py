@@ -1,29 +1,4 @@
-﻿# Copyright (c) 2020, NVIDIA CORPORATION.  All rights reserved.
-#
-# NVIDIA CORPORATION and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION is strictly prohibited.
-
-"""Helper for adding automatically tracked values to Tensorboard.
-
-Autosummary creates an identity op that internally keeps track of the input
-values and automatically shows up in TensorBoard. The reported value
-represents an average over input components. The average is accumulated
-constantly over time and flushed when save_summaries() is called.
-
-Notes:
-- The output tensor must be used as an input for something else in the
-  graph. Otherwise, the autosummary op will not get executed, and the average
-  value will not get accumulated.
-- It is perfectly fine to include autosummaries with the same name in
-  several places throughout the graph, even if they are executed concurrently.
-- It is ok to also pass in a python scalar or numpy array. In this case, it
-  is added to the average immediately.
-"""
-
-from collections import OrderedDict
+﻿from collections import OrderedDict
 import numpy as np
 import tensorflow as tf
 
