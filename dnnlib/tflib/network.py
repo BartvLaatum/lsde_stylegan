@@ -87,7 +87,8 @@ class Network:
 
         # Choose TensorFlow name scope.
         with tf.name_scope(None):
-            scope = tf.get_default_graph().unique_name(name, mark_as_used=True)
+            with tf.Graph().as_default():
+                scope = tf.get_default_graph().unique_name(name, mark_as_used=True)
 
         # Query current TensorFlow device.
         with tfutil.absolute_name_scope(scope), tf.control_dependencies(None):
