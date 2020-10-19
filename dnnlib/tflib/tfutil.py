@@ -15,7 +15,7 @@ import tensorflow.compat.v1 as tf
 # Silence deprecation warnings from TensorFlow 1.13 onwards
 import logging
 logging.getLogger('tensorflow').setLevel(logging.ERROR)
-import tensorflow.contrib   # requires TensorFlow 1.x!
+import tensorflow.compat.v1.contrib   # requires TensorFlow 1.x!
 tf.contrib = tensorflow.contrib
 
 # print("geen tf contrib")
