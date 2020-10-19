@@ -16,7 +16,7 @@ import uuid
 import hashlib
 import tempfile
 import shutil
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from tensorflow.python.client import device_lib # pylint: disable=no-name-in-module
 
 from .. import util
