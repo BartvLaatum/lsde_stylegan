@@ -1,0 +1,190 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 9 files
+Detected 0 issues that require attention
+--------------------------------------------------------------------------------
+================================================================================
+Detailed log follows:
+
+================================================================================
+================================================================================
+Input tree: 'tflib/'
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'tflib/autosummary.py'
+ outputting to 'v2/autosummary.py'
+--------------------------------------------------------------------------------
+
+ERROR: Failed to parse.
+Traceback (most recent call last):
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\tensorflow\tools\compatibility\ast_edits.py", line 940, in update_string_pasta
+    t = pasta.parse(text)
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\pasta\__init__.py", line 23, in parse
+    t = ast_utils.parse(src)
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\pasta\base\ast_utils.py", line 56, in parse
+    tree = ast.parse(sanitize_source(src))
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\ast.py", line 35, in parse
+    return compile(source, filename, mode, PyCF_ONLY_AST)
+  File "<unknown>", line 1
+    ﻿from collections import OrderedDict
+          ^
+SyntaxError: invalid character in identifier
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'tflib/custom_ops.py'
+ outputting to 'v2/custom_ops.py'
+--------------------------------------------------------------------------------
+
+139:37: INFO: Renamed 'tf.VERSION' to 'tf.version.VERSION'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'tflib/network.py'
+ outputting to 'v2/network.py'
+--------------------------------------------------------------------------------
+
+ERROR: Failed to parse.
+Traceback (most recent call last):
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\tensorflow\tools\compatibility\ast_edits.py", line 940, in update_string_pasta
+    t = pasta.parse(text)
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\pasta\__init__.py", line 23, in parse
+    t = ast_utils.parse(src)
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\pasta\base\ast_utils.py", line 56, in parse
+    tree = ast.parse(sanitize_source(src))
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\ast.py", line 35, in parse
+    return compile(source, filename, mode, PyCF_ONLY_AST)
+  File "<unknown>", line 1
+    ﻿import types
+            ^
+SyntaxError: invalid character in identifier
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'tflib/optimizer.py'
+ outputting to 'v2/optimizer.py'
+--------------------------------------------------------------------------------
+
+ERROR: Failed to parse.
+Traceback (most recent call last):
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\tensorflow\tools\compatibility\ast_edits.py", line 940, in update_string_pasta
+    t = pasta.parse(text)
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\pasta\__init__.py", line 23, in parse
+    t = ast_utils.parse(src)
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\pasta\base\ast_utils.py", line 56, in parse
+    tree = ast.parse(sanitize_source(src))
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\ast.py", line 35, in parse
+    return compile(source, filename, mode, PyCF_ONLY_AST)
+  File "<unknown>", line 1
+    ﻿import platform
+            ^
+SyntaxError: invalid character in identifier
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'tflib/tfutil.py'
+ outputting to 'v2/tfutil.py'
+--------------------------------------------------------------------------------
+
+ERROR: Failed to parse.
+Traceback (most recent call last):
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\tensorflow\tools\compatibility\ast_edits.py", line 940, in update_string_pasta
+    t = pasta.parse(text)
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\pasta\__init__.py", line 23, in parse
+    t = ast_utils.parse(src)
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\pasta\base\ast_utils.py", line 56, in parse
+    tree = ast.parse(sanitize_source(src))
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\ast.py", line 35, in parse
+    return compile(source, filename, mode, PyCF_ONLY_AST)
+  File "<unknown>", line 1
+    ﻿import os
+            ^
+SyntaxError: invalid character in identifier
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'tflib/__init__.py'
+ outputting to 'v2/__init__.py'
+--------------------------------------------------------------------------------
+
+ERROR: Failed to parse.
+Traceback (most recent call last):
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\tensorflow\tools\compatibility\ast_edits.py", line 940, in update_string_pasta
+    t = pasta.parse(text)
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\pasta\__init__.py", line 23, in parse
+    t = ast_utils.parse(src)
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\pasta\base\ast_utils.py", line 56, in parse
+    tree = ast.parse(sanitize_source(src))
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\ast.py", line 35, in parse
+    return compile(source, filename, mode, PyCF_ONLY_AST)
+  File "<unknown>", line 1
+    ﻿from . import autosummary
+          ^
+SyntaxError: invalid character in identifier
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'tflib/ops\\fused_bias_act.py'
+ outputting to 'v2/ops\\fused_bias_act.py'
+--------------------------------------------------------------------------------
+
+80:8: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+81:8: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+114:8: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+116:8: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+159:17: INFO: Added keywords to args of function 'tf.reduce_sum'
+161:17: INFO: Added keywords to args of function 'tf.reduce_sum'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'tflib/ops\\upfirdn_2d.py'
+ outputting to 'v2/ops\\upfirdn_2d.py'
+--------------------------------------------------------------------------------
+
+71:8: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+87:8: INFO: Added keywords to args of function 'tf.pad'
+91:8: INFO: Added keywords to args of function 'tf.pad'
+95:8: INFO: Added keywords to args of function 'tf.transpose'
+98:8: INFO: Added keywords to args of function 'tf.nn.conv2d'
+98:8: INFO: Renamed keyword argument for tf.nn.conv2d from filter to filters
+100:8: INFO: Added keywords to args of function 'tf.transpose'
+110:8: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+274:8: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+282:12: INFO: Added keywords to args of function 'tf.nn.conv2d'
+282:12: INFO: Renamed keyword argument for tf.nn.conv2d from filter to filters
+302:8: INFO: Added keywords to args of function 'tf.transpose'
+341:8: INFO: Added keywords to args of function 'tf.convert_to_tensor'
+348:12: INFO: Added keywords to args of function 'tf.nn.conv2d'
+348:12: INFO: Renamed keyword argument for tf.nn.conv2d from filter to filters
+365:11: INFO: Added keywords to args of function 'tf.nn.conv2d'
+365:11: INFO: Renamed keyword argument for tf.nn.conv2d from filter to filters
+416:11: INFO: Added keywords to args of function 'tf.shape'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'tflib/ops\\__init__.py'
+ outputting to 'v2/ops\\__init__.py'
+--------------------------------------------------------------------------------
+
+ERROR: Failed to parse.
+Traceback (most recent call last):
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\tensorflow\tools\compatibility\ast_edits.py", line 940, in update_string_pasta
+    t = pasta.parse(text)
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\pasta\__init__.py", line 23, in parse
+    t = ast_utils.parse(src)
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\site-packages\pasta\base\ast_utils.py", line 56, in parse
+    tree = ast.parse(sanitize_source(src))
+  File "c:\users\kassa\appdata\local\programs\python\python37\lib\ast.py", line 35, in parse
+    return compile(source, filename, mode, PyCF_ONLY_AST)
+  File "<unknown>", line 1
+    ﻿# Copyright (c) 2020, NVIDIA CORPORATION.  All rights reserved.
+      ^
+SyntaxError: invalid character in identifier
+
+--------------------------------------------------------------------------------
+
