@@ -16,7 +16,7 @@ import sys
 import copy
 import numpy as np
 import tensorflow.compat.v1 as tf
-# tf.disable_v2_behavior()
+tf.disable_v2_behavior()
 
 from collections import OrderedDict
 from typing import Any, List, Tuple, Union, Callable
@@ -87,7 +87,8 @@ class Network:
 
         # Choose TensorFlow name scope.
         with tf.name_scope(None):
-            scope = tf.get_default_graph().unique_name(name, mark_as_used=True)
+            with tf.Graph().as_default():
+                scope = tf.get_default_graph().unique_name(name, mark_as_used=True)
 
         # Query current TensorFlow device.
         with tfutil.absolute_name_scope(scope), tf.control_dependencies(None):
